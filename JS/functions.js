@@ -51,6 +51,7 @@ const initialize = () => {
         }).done(res => {
             $("#country").show();
             const jsonResp = JSON.parse(res);
+            console.log(jsonResp);
             renderTimezoneCurrency(jsonResp);
             renderWeatherInfo(jsonResp);
             renderNews(jsonResp);
@@ -129,6 +130,7 @@ const getDataAndStore = (q, localStorageKey) => {
     }).done(res => {
         try {
         const jsonResp = JSON.parse(res);
+        console.log(jsonResp);
         renderTimezoneCurrency(jsonResp);
         renderWeatherInfo(jsonResp);
         renderNews(jsonResp);
