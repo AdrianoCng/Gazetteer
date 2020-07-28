@@ -1,0 +1,5 @@
+{
+    "require": {
+        "aternus/geonames-client": "^1.0"
+    }
+}
