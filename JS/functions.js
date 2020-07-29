@@ -292,14 +292,8 @@ const countryBorder = iso3 => {
               return false;
             }
           }
-        }
+        };
         
-    fetch("./includes/countries.geojson")
-    .then(response => {
-        return response.json();
-    })
-    .then(data => {
-        const borders = L.geoJSON(data, filter).addTo(bordersLayer);
-        mymap.fitBounds(borders.getBounds());
-    });
+    const borders = L.geoJSON(geoJson, filter).addTo(bordersLayer);
+    mymap.fitBounds(borders.getBounds());
 };

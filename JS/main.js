@@ -11,24 +11,6 @@ $(document).ready(() => {
         getDataAndStore(country, country);
     });
 
-
-    $("#form").submit(event => {
-        event.preventDefault();
-        
-        const inputValue = $("#input-form").val();
-        const q = $("#form").serialize();
-
-        if (!inputValue) {
-            $("#error-message").html("Insert Country");
-            setTimeout(() => {
-                $("#error-message").html("");
-            }, 3500);
-            return;
-        };
-
-        getDataAndStore(q, inputValue);
-    });
-
     $("#input-form").change(event => {
         
         const inputValue = $("#input-form").val();

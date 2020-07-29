@@ -267,7 +267,6 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
-                <button class="form-control btn btn-info" type="submit" id="search-input"><i class="fas fa-location-arrow"></i> Search</button>
             </form>
         </nav>
     </div>
@@ -369,6 +368,7 @@
     <script src="./JS/jquery-3.5.1.min.js"></script>
     <script src="./JS/bootstrap.min.js"></script>
     <script src="./leaflet/leaflet.js"></script>
+    <script src="./JS/geojson.js"></script>
     <script src="./JS/map.js"></script>
     <script src="./JS/functions.js"></script>
     <script src="./JS/main.js"></script>
