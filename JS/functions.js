@@ -299,7 +299,6 @@ const countryBorder = iso3 => {
         return response.json();
     })
     .then(data => {
-        console.log(data);
         const borders = L.geoJSON(data, filter).addTo(bordersLayer);
         mymap.fitBounds(borders.getBounds());
     });
