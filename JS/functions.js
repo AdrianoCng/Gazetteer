@@ -105,11 +105,11 @@ const getDataAndStore = (q, localStorageKey) => {
             localStorage.setItem(localStorageKey, res);
             console.log("stored in local Storage");
             } catch (error) {
-                removeLoader();
                 $("#error-message").html("Sorry. Not Found");
                 setTimeout(() => {
                     $("#error-message").html("");
                 }, 3500);
+                return false;
             }
         }).always(() => {
             removeLoader();
@@ -133,6 +133,10 @@ const getDataAndStore = (q, localStorageKey) => {
         renderWeatherInfo(jsonResp);
         renderNews(jsonResp);
         } catch (error) {
+            $("#error-message").html("Sorry. Not Found");
+                setTimeout(() => {
+                    $("#error-message").html("");
+                }, 3500);
             return false;
         }
     }).always(() => {
@@ -251,11 +255,7 @@ const renderNews = jsonResp => {
             const srcImg =  article.urlToImage;
             const title = article.title;
             const description = article.description;
-            const content = article.content;
-            const author = article.author;
             const url = article.url;
-            const source = article.source.name;
-            const date = article.publishedAt;
     
             const htmlTag = `
                 <li class="media">
@@ -294,11 +294,13 @@ const countryBorder = iso3 => {
           }
         }
         
-        fetch("./includes/countries.geojson")
-        .then(response => {
+    fetch("./includes/countries.geojson")
+    .then(response => {
         return response.json();
-        })
-        .then(data => {
-        L.geoJSON(data, filter).addTo(bordersLayer);
-        });
+    })
+    .then(data => {
+        console.log(data);
+        const borders = L.geoJSON(data, filter).addTo(bordersLayer);
+        mymap.fitBounds(borders.getBounds());
+    });
 };
