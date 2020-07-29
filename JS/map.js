@@ -1,4 +1,4 @@
-const mymap = L.map('mapid').setView([51, -1.058], 5);
+const mymap = L.map('mapid').setView([51, -1.058], 10);
 
 // Layers
 const layerGroup = L.layerGroup().addTo(mymap);
