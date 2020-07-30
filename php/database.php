@@ -16,7 +16,7 @@
 
 // $url=parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true"));
 
-$url = parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true"));
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $server = $url["host"];
 $username = $url["user"];
