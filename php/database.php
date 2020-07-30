@@ -21,6 +21,6 @@ $url=parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.n
   $password = $url["pass"];
   $db = substr($url["path"],1);
 
-  mysql_connect($server, $username, $password);
+  $conn = mysql_connect($server, $username, $password, $db);
 
-  mysql_select_db($db);
+//   mysql_select_db($db);
