@@ -14,13 +14,13 @@
 
 // mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true
 
-$url=parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true"));
+// $url=parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true"));
 
-  $server = $url["host"];
-  $username = $url["user"];
-  $password = $url["pass"];
-  $db = substr($url["path"],1);
+$url = parse_url(getenv("mysql://bf818bc3326135:e16fd17d@eu-cdbr-west-03.cleardb.net/heroku_7f07fc2c6e7a68c?reconnect=true"));
 
-  $conn = mysql_connect($server, $username, $password, $db);
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-//   mysql_select_db($db);
+$conn = new mysqli($server, $username, $password, $db);
