@@ -24,6 +24,7 @@ const initialize = () => {
                 },
                 beforeSend: function() {
                     $("#country").hide();
+                    $("#mapid").css("visibility", "hidden");
                     $("#loadingDiv").show();
                 }
             }).done(res => {
@@ -46,6 +47,7 @@ const initialize = () => {
             },
             beforeSend: function() {
                 $("#country").hide();
+                $("#mapid").css("visibility", "hidden");
                 $("#loadingDiv").show();
             }
         }).done(res => {
@@ -94,6 +96,7 @@ const getDataAndStore = (q, localStorageKey) => {
                 q: q
             },
             beforeSend: function() {
+                $("#mapid").css("visibility", "hidden");
                 $("#loadingDiv").show();
             }
         }).done(res => {
@@ -124,6 +127,7 @@ const getDataAndStore = (q, localStorageKey) => {
             q: q
         },
         beforeSend: function() {
+            $("#mapid").css("visibility", "hidden");
             $("#loadingDiv").show();
         }
     }).done(res => {
@@ -277,7 +281,8 @@ const renderNews = jsonResp => {
 
 const removeLoader = () => {
     $( "#loadingDiv" ).fadeOut(1000, function() {
-    $( "#loadingDiv" ).hide();
+        $("#mapid").css("visibility", "visible");
+        $( "#loadingDiv" ).hide();
     });  
 }
 
