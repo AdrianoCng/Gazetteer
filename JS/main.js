@@ -1,4 +1,11 @@
 $(document).ready(() => {
+
+    $(document).ajaxSend(function() {
+
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+
+    });
+
     initialize();
     
     $("#show-position-button").click(() => {
